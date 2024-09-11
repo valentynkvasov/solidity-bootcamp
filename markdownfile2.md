@@ -1,0 +1,2 @@
+# SafeERC20
+SafeERC20 wraps the basic ERC20 functions (transfer, transferFrom, approve, etc.) in safe methods that handle potential non-standard behavior. If a token returns false or doesn’t return a value at all, SafeERC20 checks for this and reverts the transaction, ensuring that no silent failures occur.
