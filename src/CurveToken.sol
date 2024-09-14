@@ -1,10 +1,9 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import { ERC20 } from "@openzeppelin/contracts@v4.9.6/token/ERC20/ERC20.sol";
+import {ERC20} from "@openzeppelin/contracts@v4.9.6/token/ERC20/ERC20.sol";
 
 contract CurveToken is ERC20 {
-
     uint256 public constant INITIAL_PRICE = 1e18;
     uint256 public constant PRICE_SLOPE = 1e18;
 
@@ -26,7 +25,7 @@ contract CurveToken is ERC20 {
 
         uint256 refund = msg.value - cost;
         if (refund > 0) {
-            (bool success, ) = msg.sender.call{value: refund}("");
+            (bool success,) = msg.sender.call{value: refund}("");
             require(success, "Refund failed");
         }
 

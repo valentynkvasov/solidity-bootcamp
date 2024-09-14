@@ -45,5 +45,4 @@ contract GodTokenTest is Test {
 
         assertEq(godToken.balanceOf(owner), initialSupply);
     }
-
 }
