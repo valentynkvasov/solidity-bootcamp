@@ -1,2 +1,2 @@
-# SafeERC20
-SafeERC20 wraps the basic ERC20 functions (transfer, transferFrom, approve, etc.) in safe methods that handle potential non-standard behavior. If a token returns false or doesn’t return a value at all, SafeERC20 checks for this and reverts the transaction, ensuring that no silent failures occur.
+## Besides the examples listed in the code and the reading, what might the wrapped NFT pattern be used for?
+I think it's already have powerful cases like WETH, which maker ETH as ERC-20, also wrapped tokens can represent Bitcoin on EVM based blockchains, as WBTC or cbBTC
